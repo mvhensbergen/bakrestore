@@ -1,7 +1,7 @@
 bakrestore.py
 =============
 
-```bakrestore.py``` is a small utility I made to ease the recovery of MSSQL database backup files (.bak created on a Windows machine) in a Linux MSSQL environment. In my line of work I have often encountered backup files that needed to be restored, but without access to the original server. As I am more fluent in Linux than Windows environments, I wished to restore these under Linux but I quickly ran into a few problems when restoring.
+```bakrestore.py``` is a small utility to ease the recovery of MSSQL database backup files (.bak created on a Windows machine) in a Linux MSSQL environment. In my line of work I have often encountered backup files that needed to be restored, but without access to the original server. As I am more fluent in Linux than Windows environments, I wished to restore these under Linux but I quickly ran into a few problems when restoring.
 
 The problem when restoring these databases is that MSSQL tries to create its ```.mdf``` and ```.ldf``` files in their original locations, e.g. ```C:\Program Files\MSSQL\Data\...```, which obviously don't exist. While some googling will show you the solution, namely using the ```MOVE``` clause while restoring the backup, it can be a chore to create that restore command each time; hence this script.
 
@@ -10,7 +10,7 @@ This python script wraps the ```sqlcmd``` commandline tool, and does the appropr
 Please note that this script comes WITHOUT WARRANTY and just provides some very RUDIMENTARY functionality, so your mileage may vary. Having said that, feedback or pull requests are always welcomed! It was made and tested on Ubuntu 20.04.
 
 Note that the script requires
-1. installation of a working [MSSQl server](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15)
+1. installation of a working [MSSQL server](https://docs.microsoft.com/en-us/sql/linux/quickstart-install-connect-ubuntu?view=sql-server-ver15)
 2. installation of [mssql-tools](https://docs.microsoft.com/en-us/sql/linux/sql-server-linux-setup-tools?view=sql-server-ver15)
 3. authentication is basic SA password
 4. restoring to a MSSQL server running on the same machine as the script.
