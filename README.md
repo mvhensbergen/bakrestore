@@ -5,7 +5,7 @@ bakrestore.py
 
 The problem when restoring these databases is that MSSQL tries to create its ```.mdf``` and ```.ldf``` files in their original locations, e.g. ```C:\Program Files\MSSQL\Data\...```, which obviously don't exist. While some googling will show you the solution, namely using the ```MOVE``` clause while restoring the backup, it can be a chore to create that restore command each time; hence this script.
 
-This python script wraps the ```sqlcmd``` commandline tool, and does the appropriate sequence of commands to get tje job done. Since it depends on the ```sqlcmd``` tool, major changes of it might break this script.
+This python script wraps the ```sqlcmd``` commandline tool, and does the appropriate sequence of commands to get the job done. Since it depends on the ```sqlcmd``` tool, major changes of it might break this script.
 
 Please note that this script comes WITHOUT WARRANTY and just provides some very RUDIMENTARY functionality, so your mileage may vary. Having said that, feedback or pull requests are always welcomed! It was made and tested on Ubuntu 20.04.
 
