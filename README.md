@@ -37,7 +37,7 @@ optional arguments:
 The most basic way to get about restoring your database is as follows:
 
 ```
-python3 bakrestore.py -file <backupfile.bak> -dbname <databasename> -password <mssqlpassword>
+python3 bakrestore.py -file </path/to/backupfile.bak> -dbname <databasename> -password <mssqlpassword>
 ```
 
 Your output should look like this:
@@ -47,3 +47,5 @@ RESTORE DATABASE successfully processed 59946 pages in 5.187 seconds (90.287 MB/
 ```
 
 If you get the error that ```sqlcmd``` is not found but you did install the package, you might want to add ```sqlcmd``` to your path, or specify its location using the ```--with-sqlcmd=/opt/mssql-tools/bin/sqlcmd``` flag.
+
+**Important:** When supplying the backup file, always specify the full path!
